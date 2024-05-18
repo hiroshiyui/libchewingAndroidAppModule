@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
 }
 
+val versionName: String = "0.8.1"
+
 android {
     namespace = "com.miyabi_hiroshi.app.libchewing_android_module"
     compileSdk = 34
@@ -14,34 +16,40 @@ android {
         consumerProguardFiles("consumer-rules.pro")
         externalNativeBuild {
             cmake {
+                cFlags("-Wno-unused-function", "-Wno-unused-but-set-variable")
                 cppFlags("")
+                targets("libchewing", "libchewing_android_module")
             }
         }
 
         targetSdk = 34
+        setProperty("archivesBaseName", "${project.name}_${versionName}")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
+        debug {
+            isMinifyEnabled = false
+        }
     }
     externalNativeBuild {
         cmake {
             path("src/main/cpp/CMakeLists.txt")
-            version = "3.22.1"
+            version = "3.24.0+"
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     ndkVersion = "26.1.10909125"
     buildToolsVersion = "34.0.0"

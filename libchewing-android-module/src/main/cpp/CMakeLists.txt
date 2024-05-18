@@ -3,13 +3,21 @@
 # For more examples on how to use CMake, see https://github.com/android/ndk-samples.
 
 # Sets the minimum CMake version required for this project.
-cmake_minimum_required(VERSION 3.22.1)
+# Keep same with libchewing (upstream):
+cmake_minimum_required(VERSION 3.24.0)
 
 # Declares the project name. The project name can be accessed via ${ PROJECT_NAME},
 # Since this is the top level CMakeLists.txt, the project name is also accessible
 # with ${CMAKE_PROJECT_NAME} (both CMake variables are in-sync within the top level
 # build script scope).
-project("libchewing_android_module")
+project("libchewing_android_module" LANGUAGES C CXX)
+
+# Import libchewing here:
+SET(BUILD_INFO true)
+SET(WITH_RUST false)
+SET(WITH_SQLITE3 true)
+SET(BUILD_SHARED_LIBS OFF)
+add_subdirectory(${CMAKE_SOURCE_DIR}/libs/libchewing EXCLUDE_FROM_ALL)
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
@@ -33,5 +41,6 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
 # build script, prebuilt third-party libraries, or Android system libraries.
 target_link_libraries(${CMAKE_PROJECT_NAME}
         # List libraries link to the target library
+        libchewing
         android
         log)
