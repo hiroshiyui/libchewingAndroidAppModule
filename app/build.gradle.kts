@@ -17,39 +17,104 @@
  */
 
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
+
+val versionName: String = "0.8.1"
 
 android {
     namespace = "com.miyabi_hiroshi.app.libchewing_android_app_module"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.miyabi_hiroshi.app.libchewing_android_app_module"
         minSdk = 23
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+        externalNativeBuild {
+            cmake {
+                cFlags("-Wno-unused-function", "-Wno-unused-but-set-variable")
+                cppFlags += ""
+                targets("libchewing", "libchewing_android_module")
+            }
+        }
+
+        setProperty("archivesBaseName", "${project.name}_${versionName}")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
+        debug {
+            isMinifyEnabled = false
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path("src/main/cpp/CMakeLists.txt")
+            version = "3.24.0+"
+            path = file("src/main/cpp/CMakeLists.txt")
+        }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
+    }
+    buildToolsVersion = "34.0.0"
+    ndkVersion = "26.1.10909125"
+
+    val chewingLibraryPath: String = "${rootDir}/app/src/main/cpp/libs/libchewing"
+
+    tasks.register<Exec>("prepareChewing") {
+        workingDir(chewingLibraryPath)
+        commandLine("cmake", "--preset", "c99-release", "-DBUILD_SHARED_LIBS=OFF", ".")
+    }
+
+    val chewingDataFiles =
+        listOf<String>("dictionary.dat", "index_tree.dat", "pinyin.tab", "swkb.dat", "symbols.dat")
+
+    tasks.register<Exec>("buildChewingData") {
+        dependsOn("prepareChewing")
+        workingDir("$chewingLibraryPath/build")
+        commandLine("make", "data", "all_static_data")
+    }
+
+    tasks.register<Copy>("copyChewingDataFiles") {
+        dependsOn("buildChewingData")
+        for (chewingDataFile in chewingDataFiles) {
+            from("$chewingLibraryPath/build/data/$chewingDataFile")
+            into("$rootDir/app/src/main/assets")
+        }
+    }
+
+    tasks.preBuild {
+        dependsOn("copyChewingDataFiles")
+    }
+
+    tasks.register<Delete>("cleanChewingDataFiles") {
+        for (chewingDataFile in chewingDataFiles) {
+            file("$rootDir/app/src/main/assets/$chewingDataFile").delete()
+        }
+    }
+
+    tasks.register<Exec>("execMakeClean") {
+        onlyIf { file("$chewingLibraryPath/build/Makefile").exists() }
+        workingDir("$chewingLibraryPath/build")
+        commandLine("make", "clean")
+        isIgnoreExitValue = true
+    }
+
+    tasks.clean {
+        dependsOn("cleanChewingDataFiles", "execMakeClean")
     }
 }
 

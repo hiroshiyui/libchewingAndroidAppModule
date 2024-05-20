@@ -13,4 +13,4 @@
 .externalNativeBuild
 .cxx
 local.properties
-/libchewing-android-module/src/main/assets/
+/app/src/main/assets/

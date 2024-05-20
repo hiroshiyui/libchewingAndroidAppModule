@@ -9,8 +9,6 @@
     Chewing JNI functions
 */
 
-
-
 /* chewing_new2() */
 extern "C" JNIEXPORT jlong JNICALL
 Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_chewingNew(

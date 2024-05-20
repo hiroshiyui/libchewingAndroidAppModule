@@ -39,4 +39,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "libchewing Android App Module"
 include(":app")
-include(":libchewing-android-module")

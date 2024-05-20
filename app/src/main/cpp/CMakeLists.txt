@@ -34,7 +34,7 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/libs/libchewing EXCLUDE_FROM_ALL)
 # used in the AndroidManifest.xml file.
 add_library(${CMAKE_PROJECT_NAME} SHARED
         # List C/C++ source files with relative paths to this CMakeLists.txt.
-        libchewing_android_module.cpp)
+        app.cpp)
 
 # Specifies libraries CMake should link to your target library. You
 # can link libraries from various origins, such as libraries defined in this
