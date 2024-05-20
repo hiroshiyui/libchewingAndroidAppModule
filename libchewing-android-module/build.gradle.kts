@@ -22,7 +22,6 @@ android {
             }
         }
 
-        targetSdk = 34
         setProperty("archivesBaseName", "${project.name}_${versionName}")
     }
 
@@ -53,6 +52,52 @@ android {
     }
     ndkVersion = "26.1.10909125"
     buildToolsVersion = "34.0.0"
+
+
+    val chewingLibraryPath: String = "${rootDir}/libchewing-android-module/src/main/cpp/libs/libchewing"
+
+    tasks.register<Exec>("prepareChewing") {
+        workingDir(chewingLibraryPath)
+        commandLine("cmake", "--preset", "c99-release", "-DBUILD_SHARED_LIBS=OFF", ".")
+    }
+
+    val chewingDataFiles =
+        listOf<String>("dictionary.dat", "index_tree.dat", "pinyin.tab", "swkb.dat", "symbols.dat")
+
+    tasks.register<Exec>("buildChewingData") {
+        dependsOn("prepareChewing")
+        workingDir("$chewingLibraryPath/build")
+        commandLine("make", "data", "all_static_data")
+    }
+
+    tasks.register<Copy>("copyChewingDataFiles") {
+        dependsOn("buildChewingData")
+        for (chewingDataFile in chewingDataFiles) {
+            from("$chewingLibraryPath/build/data/$chewingDataFile")
+            into("$rootDir/libchewing-android-module/src/main/assets")
+        }
+    }
+
+    tasks.preBuild {
+        dependsOn("copyChewingDataFiles")
+    }
+
+    tasks.register<Delete>("cleanChewingDataFiles") {
+        for (chewingDataFile in chewingDataFiles) {
+            file("$rootDir/libchewing-android-module/src/main/assets/$chewingDataFile").delete()
+        }
+    }
+
+    tasks.register<Exec>("execMakeClean") {
+        onlyIf { file("$chewingLibraryPath/build/Makefile").exists() }
+        workingDir("$chewingLibraryPath/build")
+        commandLine("make", "clean")
+        isIgnoreExitValue = true
+    }
+
+    tasks.clean {
+        dependsOn("cleanChewingDataFiles", "execMakeClean")
+    }
 }
 
 dependencies {
