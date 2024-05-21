@@ -10,7 +10,7 @@ libchewingAndroidAppModule 是[樸實注音鍵盤](https://github.com/hiroshiyui
 
 `./gradlew tasks bundleDebugAar bundleReleaseAar`
 
-The built AARs will be located at _libchewing-android-module/build/outputs/aar/_
+The built AARs will be located at _app/build/outputs/aar/_
 
 # Acknowledgements 感謝有您
 
