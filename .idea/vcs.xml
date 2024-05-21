@@ -3,6 +3,5 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/cpp/libs/libchewing" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/libchewing-android-module/src/main/cpp/libs/libchewing" vcs="Git" />
   </component>
 </project>
