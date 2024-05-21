@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.miyabi_hiroshi.app.libchewing_android_module
+package com.miyabi_hiroshi.app.libchewing_android_app_module
 
 const val SYMBOL_MODE: Int = 0
 const val CHINESE_MODE: Int = 1
@@ -27,7 +27,7 @@ class Chewing {
 
     init {
         try {
-            System.loadLibrary("libchewing_android_module")
+            System.loadLibrary("libchewing_android_app_module")
         } catch (exception: Throwable) {
             exception.printStackTrace()
             throw ChewingInitException

@@ -11,7 +11,7 @@
 
 /* chewing_new2() */
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_chewingNew(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_chewingNew(
         JNIEnv *env,
         jobject,
         jstring data_path) {
@@ -50,7 +50,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_chewingNew(
 
 /* chewing_delete() */
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_delete(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_delete(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -61,7 +61,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_delete(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setChiEngMode(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_setChiEngMode(
         JNIEnv *env,
         jobject,
         jint mode,
@@ -72,7 +72,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setChiEngMode(
 
 /* chewing_get_ChiEngMode() */
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getChiEngMode(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_getChiEngMode(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -84,7 +84,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getChiEngMode(
 
 /* chewing_set_selKey() */
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setSelKey(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_setSelKey(
         JNIEnv *env,
         jobject,
         jintArray selkeys,
@@ -101,7 +101,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setSelKey(
 
 /* chewing_get_selKey() */
 extern "C" JNIEXPORT jintArray JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getSelKey(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_getSelKey(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -124,7 +124,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getSelKey(
 
 /* chewing_free() */
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_free(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_free(
         JNIEnv *env,
         jobject,
         jlong res_ptr) {
@@ -136,7 +136,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_free(
 
 /* chewing_set_maxChiSymbolLen() */
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setMaxChiSymbolLen(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_setMaxChiSymbolLen(
         JNIEnv *env,
         jobject,
         jint len,
@@ -149,7 +149,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setMaxChiSymbol
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getMaxChiSymbolLen(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_getMaxChiSymbolLen(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -161,7 +161,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getMaxChiSymbol
 
 /* chewing_set_candPerPage() */
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setCandPerPage(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_setCandPerPage(
         JNIEnv *env,
         jobject,
         jint candidates,
@@ -174,7 +174,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setCandPerPage(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getCandPerPage(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_getCandPerPage(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -186,7 +186,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getCandPerPage(
 
 /* chewing_set_phraseChoiceRearward() */
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setPhraseChoiceRearward(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_setPhraseChoiceRearward(
         JNIEnv *env,
         jobject,
         jboolean boolean,
@@ -199,7 +199,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setPhraseChoice
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getPhraseChoiceRearward(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_getPhraseChoiceRearward(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -211,7 +211,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getPhraseChoice
 
 /* chewing_handle_Default() */
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleDefault(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_handleDefault(
         JNIEnv *env,
         jobject,
         jchar key,
@@ -223,7 +223,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleDefault(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleBackspace(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_handleBackspace(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -236,7 +236,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleBackspace
 
 /* chewing_handle_Enter() */
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleEnter(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_handleEnter(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -248,7 +248,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleEnter(
 
 /* chewing_handle_Space() */
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleSpace(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_handleSpace(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -260,7 +260,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleSpace(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleHome(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_handleHome(
         JNIEnv *env, jobject,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
@@ -270,7 +270,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleHome(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleEnd(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_handleEnd(
         JNIEnv *env, jobject,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
@@ -281,7 +281,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleEnd(
 
 /* chewing_handle_Left() */
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleLeft(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_handleLeft(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -293,7 +293,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleLeft(
 
 /* chewing_handle_Right() */
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleRight(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_handleRight(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -305,7 +305,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleRight(
 
 /* chewing_commit_String() */
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_commitString(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_commitString(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -319,7 +319,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_commitString(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_commitStringStatic(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_commitStringStatic(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -331,7 +331,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_commitStringSta
 
 /* chewing_commit_preedit_buf() */
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_commitPreeditBuf(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_commitPreeditBuf(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -345,7 +345,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_commitPreeditBu
 
 /* chewing_cand_open() */
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candOpen(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candOpen(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -357,7 +357,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candOpen(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candClose(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candClose(
         JNIEnv *env, jobject,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
@@ -369,7 +369,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candClose(
 
 /* chewing_cand_TotalChoice() */
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candTotalChoice(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candTotalChoice(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -384,7 +384,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candTotalChoice
 
 /* chewing_cand_choose_by_index() */
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candChooseByIndex(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candChooseByIndex(
         JNIEnv *env,
         jobject,
         jint index,
@@ -399,7 +399,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candChooseByInd
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candListHasPrev(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candListHasPrev(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -413,7 +413,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candListHasPrev
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candListHasNext(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candListHasNext(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -427,7 +427,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candListHasNext
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candListPrev(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candListPrev(
         JNIEnv *env, jobject,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
@@ -440,7 +440,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candListPrev(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candListNext(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candListNext(
         JNIEnv *env, jobject,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
@@ -453,7 +453,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candListNext(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candListFirst(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candListFirst(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -467,7 +467,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candListFirst(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candListLast(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candListLast(
         JNIEnv *env, jobject,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
@@ -480,7 +480,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candListLast(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setKBType(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_setKBType(
         JNIEnv *env, jobject,
         jint type,
         jlong chewing_ctx_ptr) {
@@ -491,7 +491,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setKBType(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getKBType(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_getKBType(
         JNIEnv *env, jobject,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
@@ -501,7 +501,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getKBType(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getKBString(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_getKBString(
         JNIEnv *env, jobject,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
@@ -512,7 +512,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getKBString(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_convKBStr2Num(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_convKBStr2Num(
         JNIEnv *env,
         jobject,
         jstring keyboard_string) {
@@ -527,7 +527,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_convKBStr2Num(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_bufferString(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_bufferString(
         JNIEnv *env, jobject,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
@@ -541,7 +541,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_bufferString(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_bufferStringStatic(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_bufferStringStatic(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -552,7 +552,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_bufferStringSta
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_bopomofoStringStatic(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_bopomofoStringStatic(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -563,7 +563,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_bopomofoStringS
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candStringByIndexStatic(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candStringByIndexStatic(
         JNIEnv *env,
         jobject,
         jint index,
@@ -575,7 +575,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candStringByInd
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_cleanPreeditBuf(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_cleanPreeditBuf(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -585,7 +585,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_cleanPreeditBuf
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_cleanBopomofoBuf(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_cleanBopomofoBuf(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
@@ -595,7 +595,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_cleanBopomofoBu
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_bufferLen(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_bufferLen(
         JNIEnv *env, jobject thiz,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
@@ -604,7 +604,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_bufferLen(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setEasySymbolInput(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_setEasySymbolInput(
         JNIEnv *env,
         jobject,
         jint mode,
@@ -614,7 +614,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setEasySymbolIn
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setSpaceAsSelection(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_setSpaceAsSelection(
         JNIEnv *env,
         jobject,
         jint mode,
@@ -624,14 +624,14 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_setSpaceAsSelec
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_commitCheck(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_commitCheck(
         JNIEnv *env, jobject,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
     return chewing_commit_Check(ctx);
 }
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_bufferCheck(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_bufferCheck(
         JNIEnv *env, jobject,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
@@ -639,7 +639,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_bufferCheck(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getSpaceAsSelection(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_getSpaceAsSelection(
         JNIEnv *env,
         jobject thiz,
         jlong chewing_ctx_ptr) {
@@ -648,7 +648,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_getSpaceAsSelec
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candTotalPage(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candTotalPage(
         JNIEnv *env,
         jobject thiz,
         jlong chewing_ctx_ptr) {
@@ -657,7 +657,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candTotalPage(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candCurrentPage(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candCurrentPage(
         JNIEnv *env,
         jobject thiz,
         jlong chewing_ctx_ptr) {
@@ -666,7 +666,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candCurrentPage
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candChoicePerPage(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candChoicePerPage(
         JNIEnv *env,
         jobject thiz,
         jlong chewing_ctx_ptr) {
@@ -675,7 +675,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candChoicePerPa
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candEnumerate(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candEnumerate(
         JNIEnv *env,
         jobject thiz,
         jlong chewing_ctx_ptr) {
@@ -684,7 +684,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candEnumerate(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candHasNext(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candHasNext(
         JNIEnv *env,
         jobject thiz,
         jlong chewing_ctx_ptr) {
@@ -693,7 +693,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candHasNext(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candString(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candString(
         JNIEnv *env,
         jobject thiz,
         jlong chewing_ctx_ptr) {
@@ -705,7 +705,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candString(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candStringStatic(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_candStringStatic(
         JNIEnv *env,
         jobject thiz,
         jlong chewing_ctx_ptr) {
@@ -716,7 +716,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_candStringStati
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_cursorCurrent(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_cursorCurrent(
         JNIEnv *env,
         jobject thiz,
         jlong chewing_ctx_ptr) {
@@ -725,7 +725,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_cursorCurrent(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleEsc(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_handleEsc(
         JNIEnv *env, jobject thiz,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
@@ -735,7 +735,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handleEsc(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handlePageUp(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_handlePageUp(
         JNIEnv *env, jobject thiz,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
@@ -745,7 +745,7 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handlePageUp(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_miyabi_1hiroshi_app_libchewing_1android_1module_Chewing_handlePageDown(
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_handlePageDown(
         JNIEnv *env,
         jobject thiz,
         jlong chewing_ctx_ptr) {

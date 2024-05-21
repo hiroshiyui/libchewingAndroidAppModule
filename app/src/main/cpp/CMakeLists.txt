@@ -10,7 +10,7 @@ cmake_minimum_required(VERSION 3.24.0)
 # Since this is the top level CMakeLists.txt, the project name is also accessible
 # with ${CMAKE_PROJECT_NAME} (both CMake variables are in-sync within the top level
 # build script scope).
-project("libchewing_android_module" LANGUAGES C CXX)
+project("libchewing_android_app_module" LANGUAGES C CXX)
 
 # Import libchewing here:
 SET(BUILD_INFO true)

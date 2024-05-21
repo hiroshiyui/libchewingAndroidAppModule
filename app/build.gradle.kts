@@ -21,10 +21,11 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
 }
 
+val projectName: String = "libchewing_android_app_module"
 val versionName: String = "0.8.1"
 
 android {
-    namespace = "com.miyabi_hiroshi.app.libchewing_android_app_module"
+    namespace = "com.miyabi_hiroshi.app.${projectName}"
     compileSdk = 34
 
     defaultConfig {
@@ -36,16 +37,18 @@ android {
             cmake {
                 cFlags("-Wno-unused-function", "-Wno-unused-but-set-variable")
                 cppFlags += ""
-                targets("libchewing", "libchewing_android_module")
+                targets("libchewing", "${projectName}")
             }
         }
 
-        setProperty("archivesBaseName", "${project.name}_${versionName}")
+        setProperty("archivesBaseName", "${projectName}_${versionName}")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isDefault = true
+            // NOTICE: SHOULD ALWAYS be false here, because it's a library!
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
