@@ -10,7 +10,7 @@ libchewingAndroidAppModule 是[樸實注音鍵盤](https://github.com/hiroshiyui
 
 1. `git clone --recursive https://github.com/hiroshiyui/libchewingAndroidAppModule.git`
 2. `cd libchewingAndroidAppModule/`
-3. `./gradlew tasks bundleDebugAar bundleReleaseAar`
+3. `./gradlew bundleReleaseAar`
 
 The built AARs will be located at _app/build/outputs/aar/_
 
