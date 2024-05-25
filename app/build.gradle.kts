@@ -79,11 +79,11 @@ android {
 
     tasks.register<Exec>("prepareChewing") {
         workingDir(chewingLibraryPath)
-        commandLine("cmake", "--preset", "c99-release", "-DBUILD_SHARED_LIBS=OFF", ".")
+        commandLine("cmake", "--preset", "rust-release", "-DBUILD_SHARED_LIBS=OFF", ".")
     }
 
     val chewingDataFiles =
-        listOf<String>("dictionary.dat", "index_tree.dat", "pinyin.tab", "swkb.dat", "symbols.dat")
+        listOf<String>("tsi.dat", "word.dat", "pinyin.tab", "swkb.dat", "symbols.dat")
 
     tasks.register<Exec>("buildChewingData") {
         dependsOn("prepareChewing")
