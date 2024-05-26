@@ -189,13 +189,13 @@ extern "C" JNIEXPORT void JNICALL
 Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_setPhraseChoiceRearward(
         JNIEnv *env,
         jobject,
-        jboolean boolean,
+        jint mode,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
     __android_log_print(ANDROID_LOG_VERBOSE, LOGTAG,
-                        "Set phrase choice rearward to (%d) from context ptr: %lld", (jint) boolean,
+                        "Set phrase choice rearward to (%d) from context ptr: %lld", (jint) mode,
                         (long long) ctx);
-    chewing_set_phraseChoiceRearward(ctx, boolean);
+    chewing_set_phraseChoiceRearward(ctx, mode);
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
