@@ -23,15 +23,15 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_chewingNew
     __android_log_print(ANDROID_LOG_VERBOSE, LOGTAG, "native_data_path: %s", native_data_path);
 
     /* build native_user_data_path */
-    char user_db[] = "user.sqlite3";
-    /* this first 1 is for '/', second 1 is for zero terminator */
-    unsigned int native_user_data_path_len = strlen(native_data_path) + strlen(user_db) + 1 + 1;
+    char user_hash_dat[] = "userhash.dat";
+    /* this first 1 is for '/', the second 1 is for zero terminator */
+    unsigned int native_user_data_path_len = strlen(native_data_path) + strlen(user_hash_dat) + 1 + 1;
     char native_user_data_path[native_user_data_path_len];
     memset(native_user_data_path, '\0', native_user_data_path_len);
 
     strcat(native_user_data_path, native_data_path);
     strcat(native_user_data_path, "/");
-    strcat(native_user_data_path, user_db);
+    strcat(native_user_data_path, user_hash_dat);
 
     __android_log_print(ANDROID_LOG_VERBOSE, LOGTAG, "native_user_data_path: %s",
                         native_user_data_path);
