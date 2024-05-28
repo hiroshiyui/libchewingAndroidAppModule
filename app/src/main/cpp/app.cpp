@@ -198,13 +198,13 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_setPhraseC
     chewing_set_phraseChoiceRearward(ctx, mode);
 }
 
-extern "C" JNIEXPORT jboolean JNICALL
+extern "C" JNIEXPORT jint JNICALL
 Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_getPhraseChoiceRearward(
         JNIEnv *env,
         jobject,
         jlong chewing_ctx_ptr) {
     auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
-    jboolean phrase_choice_rearward;
+    jint phrase_choice_rearward;
     phrase_choice_rearward = chewing_get_phraseChoiceRearward(ctx);
     return phrase_choice_rearward;
 }

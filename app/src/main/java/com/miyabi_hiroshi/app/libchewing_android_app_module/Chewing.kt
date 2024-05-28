@@ -77,7 +77,7 @@ class Chewing {
     external fun getKBString(chewingCtx: Long = context): String
     external fun getKBType(chewingCtx: Long = context): Int
     external fun getMaxChiSymbolLen(chewingCtx: Long = context): Int
-    external fun getPhraseChoiceRearward(chewingCtx: Long = context): Boolean
+    external fun getPhraseChoiceRearward(chewingCtx: Long = context): Int
     external fun getSelKey(chewingCtx: Long = context): IntArray
     external fun getSpaceAsSelection(chewingCtx: Long = context): Int
     external fun handleBackspace(chewingCtx: Long = context)
