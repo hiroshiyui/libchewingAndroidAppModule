@@ -182,8 +182,22 @@ android {
         isIgnoreExitValue = true
     }
 
+    tasks.register<Delete>("deleteChewingBuildDirectory") {
+        onlyIf { file("$chewingLibraryPath/build/Makefile").exists() }
+        delete("$chewingLibraryPath/build")
+    }
+
+    tasks.register<Delete>("deleteBuiltAarFile") {
+        delete("$rootDir/app/build/outputs/aar/${projectName}-${versionName}.aar")
+    }
+
     tasks.clean {
-        dependsOn("cleanChewingDataFiles", "execMakeClean")
+        dependsOn(
+            "cleanChewingDataFiles",
+            "execMakeClean",
+            "deleteChewingBuildDirectory",
+            "deleteBuiltAarFile"
+        )
     }
 }
 
