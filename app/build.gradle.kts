@@ -37,7 +37,7 @@ android {
             cmake {
                 cFlags("-Wno-unused-function", "-Wno-unused-but-set-variable")
                 cppFlags += ""
-                targets("libchewing", "${projectName}")
+                targets("${projectName}")
             }
         }
 
@@ -79,7 +79,7 @@ android {
 
     tasks.register<Exec>("prepareChewing") {
         workingDir(chewingLibraryPath)
-        commandLine("cmake", "--preset", "rust-release", "-DBUILD_SHARED_LIBS=OFF", ".")
+        commandLine("cmake", "--preset", "rust-release")
     }
 
     val chewingDataFiles =
