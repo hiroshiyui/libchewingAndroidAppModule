@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/cpp/libs/libchewing" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/cpp/libs/libchewing/build/_deps/corrosion-src" vcs="Git" />
   </component>
 </project>
