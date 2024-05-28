@@ -6,14 +6,6 @@ The libchewingAndroidAppModule is a byproduct of the [Guileless Bopomofo](https:
 
 libchewingAndroidAppModule 是[樸實注音鍵盤](https://github.com/hiroshiyui/GuilelessBopomofo)專案的副產品，將[新酷音函式庫](https://github.com/chewing/libchewing)打包為 Android App Module (AAR) 格式，透過模組化途徑方便開發與元件再利用。
 
-# Prerequisites for Rust targets 編譯 Rust 程式碼的必備項目
-
-* [rustup](https://rustup.rs/) - installer for the systems programming language Rust
-* `rustup target add aarch64-linux-android`
-* `rustup target add armv7-linux-androideabi`
-* `rustup target add i686-linux-android`
-* `rustup target add x86_64-linux-android`
-
 # Build 組建
 
 1. `git clone --recursive https://github.com/hiroshiyui/libchewingAndroidAppModule.git`
