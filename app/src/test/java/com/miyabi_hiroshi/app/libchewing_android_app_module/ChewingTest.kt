@@ -18,18 +18,23 @@
 
 package com.miyabi_hiroshi.app.libchewing_android_app_module
 
-import org.junit.Assert.*
-
 import org.junit.After
+import org.junit.Assert.assertEquals
 import org.junit.Before
+import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 
+
 @RunWith(JUnit4::class)
 class ChewingTest {
-
     @Before
     fun setUp() {
+    }
+
+    @Test
+    fun addition_isCorrect() {
+        assertEquals(4, 2 + 2)
     }
 
     @After
