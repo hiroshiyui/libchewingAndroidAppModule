@@ -18,18 +18,21 @@
 
 package com.miyabi_hiroshi.app.libchewing_android_app_module
 
-import org.junit.Test
-
 import org.junit.Assert.*
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * See [testing documentation](http://d.android.com/tools/testing).
- */
-class ExampleUnitTest {
-    @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+import org.junit.After
+import org.junit.Before
+import org.junit.runner.RunWith
+import org.junit.runners.JUnit4
+
+@RunWith(JUnit4::class)
+class ChewingTest {
+
+    @Before
+    fun setUp() {
+    }
+
+    @After
+    fun tearDown() {
     }
 }
