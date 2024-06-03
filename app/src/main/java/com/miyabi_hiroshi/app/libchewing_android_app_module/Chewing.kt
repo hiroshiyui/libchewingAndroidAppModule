@@ -35,6 +35,7 @@ class Chewing {
     }
 
     object ChewingInitException : Throwable() {
+        private fun readResolve(): Any = ChewingInitException
         override val message: String = "Unable to initialize Chewing"
     }
 
