@@ -22,7 +22,7 @@ plugins {
 }
 
 val projectName: String = "libchewing_android_app_module"
-val versionName: String = "0.9.1"
+val versionName: String = "0.9.1.1"
 
 android {
     namespace = "com.miyabi_hiroshi.app.${projectName}"
@@ -88,7 +88,7 @@ android {
     }
 
     val chewingDataFiles =
-        listOf<String>("tsi.dat", "word.dat", "pinyin.tab", "swkb.dat", "symbols.dat")
+        listOf<String>("tsi.dat", "word.dat", "swkb.dat", "symbols.dat")
 
     tasks.register<Exec>("buildChewingData") {
         dependsOn("prepareChewing")
