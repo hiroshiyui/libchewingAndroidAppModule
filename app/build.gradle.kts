@@ -26,7 +26,7 @@ val versionName: String = "0.9.1.1"
 
 android {
     namespace = "com.miyabi_hiroshi.app.${projectName}"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 23
@@ -77,7 +77,7 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildToolsVersion = "34.0.0"
+    buildToolsVersion = "35.0.0"
     ndkVersion = "26.1.10909125"
 
     val chewingLibraryPath: String = "${rootDir}/app/src/main/cpp/libs/libchewing"
