@@ -78,7 +78,7 @@ android {
         jvmTarget = "17"
     }
     buildToolsVersion = "35.0.0"
-    ndkVersion = "26.1.10909125"
+    ndkVersion = "28.1.13356709"
 
     val chewingLibraryPath: String = "${rootDir}/app/src/main/cpp/libs/libchewing"
 
