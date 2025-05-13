@@ -19,7 +19,7 @@
 #include <jni.h>
 #include <string>
 #include <android/log.h>
-#include "libs/libchewing/include/chewing.h"
+#include "libs/libchewing/capi/include/chewing.h"
 
 #define LOGTAG "ChewingNativeLib"
 
