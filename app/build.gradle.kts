@@ -85,7 +85,7 @@ android {
     tasks.register<Exec>("prepareChewing") {
         workingDir(chewingLibraryPath)
         // This is just for task 'buildChewingData', other definitions are in cpp/CMakeLists.txt
-        commandLine("cmake", "--preset", "rust-release")
+        commandLine("cmake", "-B", "build/", "-DBUILD_INFO=false", "-DBUILD_TESTING=false", "-DWITH_SQLITE3=false", "-DCMAKE_BUILD_TYPE=Release")
     }
 
     val chewingDataFiles =
