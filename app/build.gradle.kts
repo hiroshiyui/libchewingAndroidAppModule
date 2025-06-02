@@ -22,7 +22,7 @@ plugins {
 }
 
 val projectName: String = "libchewing_android_app_module"
-val versionName: String = "0.9.1.3"
+val versionName: String = "0.9.1.4"
 
 android {
     namespace = "com.miyabi_hiroshi.app.${projectName}"
