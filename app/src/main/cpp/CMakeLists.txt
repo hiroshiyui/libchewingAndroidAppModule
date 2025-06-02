@@ -32,8 +32,8 @@ project("libchewing_android_app_module" LANGUAGES C CXX)
 
 # Import libchewing here:
 SET(BUILD_INFO true)
-SET(WITH_RUST true)
 SET(WITH_SQLITE3 false)
+SET(CMAKE_BUILD_TYPE Release)
 add_subdirectory(${CMAKE_SOURCE_DIR}/libs/libchewing EXCLUDE_FROM_ALL)
 
 # Creates and names a library, sets it as either STATIC
