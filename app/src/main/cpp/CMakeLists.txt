@@ -31,7 +31,10 @@ cmake_minimum_required(VERSION 3.24.0)
 project("libchewing_android_app_module" LANGUAGES C CXX)
 
 # Import libchewing here:
-SET(BUILD_INFO true)
+# never build unnecessary info documents
+SET(BUILD_INFO false)
+# never build testing code
+SET(BUILD_TESTING false)
 SET(WITH_SQLITE3 false)
 SET(CMAKE_BUILD_TYPE Release)
 add_subdirectory(${CMAKE_SOURCE_DIR}/libs/libchewing EXCLUDE_FROM_ALL)
