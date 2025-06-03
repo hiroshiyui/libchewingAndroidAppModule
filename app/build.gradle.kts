@@ -1,3 +1,5 @@
+import com.android.build.api.dsl.Packaging
+
 /*
  *     libchewingAndroidAppModule: libchewing Android App Module (AAR)
  *     Copyright (C) 2024.  YOU, Hui-Hong
@@ -43,7 +45,6 @@ android {
 
         setProperty("archivesBaseName", "${projectName}_${versionName}")
     }
-
     buildTypes {
         release {
             isDefault = true
@@ -69,6 +70,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+    packaging {
+        jniLibs.keepDebugSymbols.add("**/*.so")
+    }
     testOptions {
         unitTests {
             isIncludeAndroidResources = true
@@ -77,6 +81,7 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
     buildToolsVersion = "35.0.0"
     ndkVersion = "28.1.13356709"
 
