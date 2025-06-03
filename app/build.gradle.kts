@@ -90,7 +90,15 @@ android {
     tasks.register<Exec>("prepareChewing") {
         workingDir(chewingLibraryPath)
         // This is just for task 'buildChewingData', other definitions are in cpp/CMakeLists.txt
-        commandLine("cmake", "-B", "build/", "-DBUILD_INFO=false", "-DBUILD_TESTING=false", "-DWITH_SQLITE3=false", "-DCMAKE_BUILD_TYPE=Release")
+        commandLine(
+            "cmake",
+            "-B",
+            "build/",
+            "-DBUILD_INFO=false",
+            "-DBUILD_TESTING=false",
+            "-DWITH_SQLITE3=false",
+            "-DCMAKE_BUILD_TYPE=Release"
+        )
     }
 
     val chewingDataFiles =
@@ -213,7 +221,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
