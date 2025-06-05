@@ -81,6 +81,7 @@ class Chewing {
     external fun getPhraseChoiceRearward(chewingCtx: Long = context): Int
     external fun getSelKey(chewingCtx: Long = context): IntArray
     external fun getSpaceAsSelection(chewingCtx: Long = context): Int
+    external fun getShapeMode(chewingCtx: Long = context): Int
     external fun handleBackspace(chewingCtx: Long = context)
     external fun handleDefault(key: Char, chewingCtx: Long = context)
     external fun handleEnd(chewingCtx: Long = context)
@@ -100,6 +101,7 @@ class Chewing {
     external fun setPhraseChoiceRearward(mode: Int, chewingCtx: Long = context)
     external fun setSelKey(selKeys: IntArray, length: Int, chewingCtx: Long = context)
     external fun setSpaceAsSelection(mode: Int, chewingCtx: Long = context)
+    external fun setShapeMode(mode: Int, chewingCtx: Long = context)
 
     fun connect(dataPath: String): Long {
         context = chewingNew(dataPath)

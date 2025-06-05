@@ -772,3 +772,24 @@ Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_handlePage
                         (long long) ctx);
     chewing_handle_PageDown(ctx);
 }
+
+extern "C" JNIEXPORT void JNICALL
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_setShapeMode(
+        JNIEnv *env,
+        jobject,
+        jint mode,
+        jlong chewing_ctx_ptr) {
+    auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
+    chewing_set_ShapeMode(ctx, mode);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_com_miyabi_1hiroshi_app_libchewing_1android_1app_1module_Chewing_getShapeMode(
+        JNIEnv *env,
+        jobject thiz,
+        jlong chewing_ctx_ptr) {
+    auto *ctx = reinterpret_cast<ChewingContext *>(chewing_ctx_ptr);
+    __android_log_print(ANDROID_LOG_VERBOSE, LOGTAG, "Get shape mode from context ptr: %lld",
+    (long long) ctx);
+    chewing_get_ShapeMode(ctx);
+}
